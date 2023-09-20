@@ -1,0 +1,25 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env host
+.env WHC
+.env.example
+cms.sql
+dev_process.md
+GitHub.md
+Journal Module.md
+Laravel CMS setup.md
+Types Module.md
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+.DS_Store
