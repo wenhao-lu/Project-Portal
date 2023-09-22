@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>My Portfolio | {{$title}}    </title>
+    <title>Kevin's Family Wellness Hub</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="{{url('app.css')}}">
@@ -16,13 +16,14 @@
 
 <header class="w3-padding">
 
-    <h1 class="w3-text-red">My Portfolio!</h1>
+    <h1 class="welcome-text">Welcome to Kevin's Family Wellness Hub</h1>
 
 </header>
 
 <hr>
 
 @yield('content')
+<!-- welcome.blade.php --> 
 
 <hr>
 
@@ -47,3 +48,9 @@
 
 </body>
 </html>
+
+<style>
+
+
+
+</style>

@@ -1,3 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Cormorant+Garamond:wght@300;400;500&family=Lato&family=Lobster&family=Playfair+Display&family=Press+Start+2P&family=Righteous&family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap");
+
+.welcome-text {
+    text-align: center;
+    color: #3a86ff;
+    font-family: "Righteous", cursive;
+}
+.intro-text {
+    text-align: center;
+    color: #3a86ff;
+    font-family: "Lato", sans-serif;
+}
+.intro-text-1,
+.intro-text-2,
+.intro-text-3 {
+    font-size: 1.5rem;
+}
+.intro {
+    max-width: 80%;
+    margin: 0 auto;
+}
 body {
-    
+    background-color: #eee;
+    font-family: "Nunito", sans-serif;
+}
+
+.console-header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #e6e6e6;
+}
+
+.message {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.userName {
+    background-image: linear-gradient(45deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.topContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+}
+.header-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.nav1 {
+    margin-right: 6em;
+    margin-left: 6em;
+    text-decoration: none;
+}
+.nav1:hover,
+.nav2:hover,
+.nav3:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+.nav2 {
+    margin-right: 6em;
+    text-decoration: none;
+}
+.nav3 {
+    text-decoration: none;
 }

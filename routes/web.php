@@ -9,6 +9,7 @@ use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationsController;
 use App\Http\Controllers\StacksController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\TipsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,3 +92,10 @@ Route::post('/console/contacts/add', [ContactsController::class, 'add'])->middle
 Route::get('/console/contacts/edit/{contact:id}', [ContactsController::class, 'editForm'])->where('contact', '[0-9]+')->middleware('auth');
 Route::post('/console/contacts/edit/{contact:id}', [ContactsController::class, 'edit'])->where('contact', '[0-9]+')->middleware('auth');
 Route::get('/console/contacts/delete/{contact:id}', [ContactsController::class, 'delete'])->where('contact', '[0-9]+')->middleware('auth');
+
+Route::get('/console/tips/list', [TipsController::class, 'list'])->middleware('auth');
+Route::get('/console/tips/add', [TipsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/tips/add', [TipsController::class, 'add'])->middleware('auth');
+Route::get('/console/tips/edit/{tip:id}', [TipsController::class, 'editForm'])->where('tip', '[0-9]+')->middleware('auth');
+Route::post('/console/tips/edit/{tip:id}', [TipsController::class, 'edit'])->where('tip', '[0-9]+')->middleware('auth');
+Route::get('/console/tips/delete/{tip:id}', [TipsController::class, 'delete'])->where('tip', '[0-9]+')->middleware('auth');

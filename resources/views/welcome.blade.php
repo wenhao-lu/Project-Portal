@@ -2,23 +2,19 @@
 
 @section ('content')
 
-<section class="w3-padding">
+<section class="intro">
         
-    <h2 class="w3-text-blue">About Me!</h2>
+    <h2 class="intro-text">Introduction</h2>
 
-    <p>
-        Quisque felis ex, pellentesque vel elementum eu, bibendum vel massa. Donec id feugiat 
-        erat. Aliquam commodo rutrum velit, vitae vestibulum purus ullamcorper vestibulum. Orci 
-        varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    <p class="intro-text-1">
+    Welcome to our Private Family Portal - an exclusive space dedicated to the well-being and togetherness of our cherished family members. 
+    Here, within the secure confines of our virtual home, we unite to cultivate healthier, happier lives. 
+    Our Family Portal is not just a platform; it's a digital haven where only our closest family members can connect, share, and thrive. 
+    </p><p class="intro-text-2">This is where we collectively manage our personal goals, track fitness progress, explore wholesome recipes, and coordinate family activities with the utmost privacy and care. 
+    Our shared journey towards well-being begins here, within the embrace of our family's love and support. 
+    </p><p class="intro-text-3">As we embark on this intimate voyage, we'll strengthen our bonds, celebrate our achievements, and cherish the shared moments that define our unique family. 
+    Welcome to a world where family comes first, and our collective health and happiness take center stage.
     </p>
-
-    <h3>My Skills</h3>
-
-    <ul>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>MySQL</li>
-    </ul>
 
 </section>
 

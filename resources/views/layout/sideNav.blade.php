@@ -54,6 +54,7 @@
         <li><a href="/console/skills/list">Manage Skills</a></li>
         <li><a href="/console/educations/list">Manage Educations</a></li>
         <li><a href="/console/stacks/list">Manage Stacks</a></li>
+        <li><a href="/console/tips/list">Manage Tips</a></li>
         <li><a href="/console/logout">Log Out</a></li>
     </ul>
 

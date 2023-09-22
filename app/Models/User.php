@@ -53,4 +53,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Project::class);
     }
+
+    public function tips()
+    {
+        return $this->hasMany(Tip::class, 'user_id');
+    }
+
 }
