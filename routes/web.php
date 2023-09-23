@@ -10,6 +10,7 @@ use App\Http\Controllers\EducationsController;
 use App\Http\Controllers\StacksController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\TipsController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,3 +100,11 @@ Route::post('/console/tips/add', [TipsController::class, 'add'])->middleware('au
 Route::get('/console/tips/edit/{tip:id}', [TipsController::class, 'editForm'])->where('tip', '[0-9]+')->middleware('auth');
 Route::post('/console/tips/edit/{tip:id}', [TipsController::class, 'edit'])->where('tip', '[0-9]+')->middleware('auth');
 Route::get('/console/tips/delete/{tip:id}', [TipsController::class, 'delete'])->where('tip', '[0-9]+')->middleware('auth');
+
+Route::get('/console/tasks/list', [TasksController::class, 'list'])->middleware('auth');
+Route::get('/console/tasks/add', [TasksController::class, 'addForm'])->middleware('auth');
+Route::post('/console/tasks/add', [TasksController::class, 'add'])->middleware('auth');
+Route::get('/console/tasks/edit/{task:id}', [TasksController::class, 'editForm'])->where('task', '[0-9]+')->middleware('auth');
+Route::post('/console/tasks/edit/{task:id}', [TasksController::class, 'edit'])->where('task', '[0-9]+')->middleware('auth');
+Route::get('/console/tasks/delete/{task:id}', [TasksController::class, 'delete'])->where('task', '[0-9]+')->middleware('auth');
+Route::post('/console/tasks/toggle', [TasksController::class, 'toggleTaskStatus'])->where('task', '[0-9]+')->middleware('auth');
