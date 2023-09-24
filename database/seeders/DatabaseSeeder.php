@@ -19,13 +19,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        // delete the database first
         User::truncate();
         Type::truncate();
         Project::truncate();
         Skill::truncate();
         Education::truncate();
         Stack::truncate();
+        
         
         User::factory()->count(2)->create();
         Type::factory()->count(3)->create();

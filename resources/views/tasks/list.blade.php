@@ -58,6 +58,7 @@
 
 </form>
 
+<!-- 
 <ul class="task-list">
     @foreach ($tasks as $task)
         <li>
@@ -74,26 +75,43 @@
             >
                 {{ $task->title }}
             </label>
+
+            <a class="task-edit-btn" href="/console/tasks/edit/{{$task->id}}">Edit</a>
+            <a href="/console/tasks/delete/{{$task->id}}">Delete</a>
+
+
+
         </li>
     @endforeach
 </ul>
-
+-->
 
         <table class="taskTable">
             <tr class="banner">
                 <th>Title</th>
-                <th>Completed</th>
                 <th>Created</th>
                 <th></th>
                 <th></th>
             </tr>
             @foreach ($tasks as $task)
                 <tr>
-                    <td>{{$task->title}}</td>
-                    <td>{{$task->completed ? 'Yes' : 'No'}}</td>
-                    <td>{{$task->created_at->format('M j, Y')}}</td>
+                    <td>            <input
+                type="checkbox"
+                class="task-checkbox"
+                id="task-{{ $task->id }}"
+                data-task-id="{{ $task->id }}"
+                {{ $task->completed ? 'checked' : '' }}
+            >
+            <label
+                for="task-{{ $task->id }}"
+                class="{{ $task->completed ? 'completed' : '' }}"
+            >
+                {{ $task->title }}
+            </label></td>
+                    <td>{{$task->created_at->format('H:i, M j, Y')}}</td>
                     <td><a href="/console/tasks/edit/{{$task->id}}">Edit</a></td>
                     <td><a href="/console/tasks/delete/{{$task->id}}">Delete</a></td>
+                    <td>{{$task->completed}}</td>
                 </tr>
             @endforeach
         </table>
@@ -144,6 +162,9 @@
 .task-btn:hover {
     background-color: #007bff; 
     color: #fff; 
+}
+.task-edit-btn{
+    padding:0 10px 0 60px;
 }
 
 .completed {
@@ -206,14 +227,13 @@
     color: #fff;
 }
 
-/* Define the table styles */
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     margin-bottom: 30px;
+    margin:0 auto;
 }
 
-/* Define the table header styles */
 th {
     font-weight: bold;
     text-align: left;

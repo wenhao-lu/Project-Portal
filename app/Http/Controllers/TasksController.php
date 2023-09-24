@@ -47,19 +47,22 @@ class TasksController extends Controller
         ]);
     }
 
-    public function edit(Task $task)
+    public function edit(Request $request, Task $task)
     {
 
         $attributes = request()->validate([
             'title' => 'required',
+            'completed' => 'required',
         ]);
 
         $task->title = $attributes['title'];
+        $task->completed = $attributes['completed'];
         $task->save();
 
         return redirect('/console/tasks/list')
             ->with('message', 'Task has been edited!');
     }
+
 
     public function delete(Task $task)
     {

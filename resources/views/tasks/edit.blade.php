@@ -4,15 +4,15 @@
 
 <section class="w3-padding">
 <div class="container">
-    <h2 class="title">Edit Tip</h2>
+    <h2 class="title">Edit Task</h2>
 
-    <form method="post" action="/console/tips/edit/{{$tip->id}}" novalidate class="w3-margin-bottom">
-
+    <form method="post" action="/console/tasks/edit/{{$task->id}}" novalidate class="w3-margin-bottom">
+        
         @csrf
 
         <div class="w3-margin-bottom">
-            <label for="title">Title:</label>
-            <input type="title" name="title" id="title" value="{{old('title', $tip->title)}}" required>
+            <label for="title">Task:</label>
+            <input type="title" name="title" id="title" value="{{old('title', $task->title)}}" required>
             
             @if ($errors->first('title'))
                 <br>
@@ -21,21 +21,26 @@
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="content">Content:</label>
-            <textarea name="content" id="content" required>{{old('content', $tip->content)}}</textarea>
+            <label for="completed">Completed:</label>
+            <select name="completed" id="completed" required>
+                <option value="1" {{ $task->completed ? 'selected' : '' }}>Yes</option>
+                <option value="0" {{ !$task->completed ? 'selected' : '' }}>No</option>
+            </select>
 
-            @if ($errors->first('content'))
+            @if ($errors->first('completed'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('content')}}</span>
+                <span class="w3-text-red">{{$errors->first('completed')}}</span>
             @endif
         </div>
 
         
-        <button type="submit" class="addBtn">Edit Tip</button>
+        <button type="submit" class="addBtn">Update Task</button>
 
     </form>
 
-    <a href="/console/tips/list">Back to Tip List</a>
+        <div class="back-btn">
+            <a href="/console/tasks/list">Back to To-Do List</a>
+        </div>
     </div>
 </section>
 
@@ -65,6 +70,7 @@
 }
 form{
     text-align: center;
+    font-size:1.5rem;
 }
 .addBtn {
   padding: 12px 24px;
@@ -92,6 +98,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.back-btn{
+   text-align: center;
+   font-size:1rem;
+   font-weight: bold;
 }
 
 </style>
