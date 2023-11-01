@@ -91,27 +91,31 @@
                 <th>Title</th>
                 <th>Created</th>
                 <th></th>
-                <th></th>
+                <th class="task-th-modify">Modify</th>
+                <th>Status</th>
             </tr>
             @foreach ($tasks as $task)
                 <tr>
-                    <td>            <input
-                type="checkbox"
-                class="task-checkbox"
-                id="task-{{ $task->id }}"
-                data-task-id="{{ $task->id }}"
-                {{ $task->completed ? 'checked' : '' }}
-            >
-            <label
-                for="task-{{ $task->id }}"
-                class="{{ $task->completed ? 'completed' : '' }}"
-            >
-                {{ $task->title }}
-            </label></td>
+                    <td>            
+                        <input
+                            type="checkbox"
+                            class="task-checkbox"
+                            id="task-{{ $task->id }}"
+                            data-task-id="{{ $task->id }}"
+                            {{ $task->completed ? 'checked' : '' }}
+                        >
+                        <label
+                            for="task-{{ $task->id }}"
+                            class="{{ $task->completed ? 'completed' : '' }}"
+                        >
+                        {{ $task->title }}
+                        </label>
+                    </td>
+
                     <td>{{$task->created_at->format('H:i, M j, Y')}}</td>
                     <td><a href="/console/tasks/edit/{{$task->id}}">Edit</a></td>
                     <td><a href="/console/tasks/delete/{{$task->id}}">Delete</a></td>
-                    <td>{{$task->completed}}</td>
+                    <td>{{$task->completed? 'Completed':'Pending'}}</td>
                 </tr>
             @endforeach
         </table>
@@ -171,8 +175,9 @@
     text-decoration: line-through;
     color: grey;
 }
-
-
+.task-th-modify{
+    padding-left: 0 !important;
+}
 .taskTitle {
     font-size: 36px;
     font-weight: bold;
@@ -228,7 +233,7 @@
 }
 
 table {
-    width: 50%;
+    width: 70%;
     border-collapse: collapse;
     margin-bottom: 30px;
     margin:0 auto;

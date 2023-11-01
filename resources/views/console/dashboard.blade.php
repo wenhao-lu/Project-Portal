@@ -16,6 +16,8 @@
         <li><a href="/console/users/list">Users</a></li>
         <li><a href="/console/stacks/list">Stacks</a></li>
         <li><a href="/console/tips/list">Tips</a></li>
+        <li><a href="/console/tasks/list">Tasks</a></li>
+        
     </ul>
 
     <div class="widgets-container">
@@ -183,7 +185,9 @@
     #consoleMain li:nth-child(7) {
         background-image: linear-gradient(to bottom right, #1E90FF, #0066CC);
     }
-    
+    #consoleMain li:nth-child(8) {
+        background-image: linear-gradient(to bottom right, #1E90FF, #00FF99);
+    }
     
     #consoleMain li:nth-child(1):before {
         background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
@@ -210,6 +214,8 @@
     #consoleMain li:nth-child(7):before {
         background-image: linear-gradient(to bottom right, #1E90FF, #0066CC);
     }
-    
+    #consoleMain li:nth-child(8):before {
+        background-image: linear-gradient(to bottom right, #1E90FF, #00FF99);
+    }
 </style>
 
