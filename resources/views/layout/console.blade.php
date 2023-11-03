@@ -14,10 +14,10 @@
 
     </head>
     <body>
-
+        <!-- dashboard header -->
         <header class="console-header">
             <div class="topContainer">
-                <h1 class="header-title">Portfolio Console</h1>
+                <h1 class="header-title">Application Console</h1>
 
                 <div class="navContainer">
                     @if (Auth::check())
@@ -26,7 +26,7 @@
                         <a href="/console/dashboard" class="nav2">Dashboard</a>  
                         <a href="/" class="nav3">Home Page</a>
                     @else
-                        <a href="/">Return to My Portfolio</a>
+                        <a href="/">Return to HomePage</a>
                     @endif
                 </div>
             </div>

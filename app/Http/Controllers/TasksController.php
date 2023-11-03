@@ -12,8 +12,11 @@ class TasksController extends Controller
 {
     public function list()
     {
-        return view('tasks.list', [
-            'tasks' => Task::all()
+        // Fetch tasks associated with the authenticated user 
+        $tasks = Task::where('user_id', Auth::user()->id)->get();
+        
+        return view('tasks.list', [ 
+            'tasks' => $tasks, 
         ]);
     }
 
@@ -55,22 +58,32 @@ class TasksController extends Controller
             'completed' => 'required',
         ]);
 
-        $task->title = $attributes['title'];
-        $task->completed = $attributes['completed'];
-        $task->save();
+        // Ensure the task belongs to the authenticated user before editing
+        if ($task->user_id === Auth::user()->id) {
+            $task->title = $attributes['title'];
+            $task->completed = $attributes['completed'];
+            $task->save();
 
-        return redirect('/console/tasks/list')
+            return redirect('/console/tasks/list')
             ->with('message', 'Task has been edited!');
+        } else {
+            return abort(403); // Unauthorized access
+        }
     }
 
 
     public function delete(Task $task)
     {
 
-        $task->delete();
-        
-        return redirect('/console/tasks/list')
-            ->with('message', 'Task has been deleted!');        
+        // Ensure the task belongs to the authenticated user before deleting
+        if ($task->user_id === Auth::user()->id) {
+            $task->delete();
+
+            return redirect('/console/tasks/list')
+                ->with('message', 'Task has been deleted!');
+        } else {
+            return abort(403); // Unauthorized access
+        }   
     }
 
 
@@ -79,8 +92,9 @@ class TasksController extends Controller
         $taskId = $request->input('taskId');
         $isCompleted = $request->input('isCompleted') ? 1 : 0; // Convert boolean to TINYINT (0 or 1)
     
-        // Update the task's status in the database
-        $task = Task::findOrFail($taskId);
+        // Update the task's status in the database if it belongs to the authenticated user
+        $task = Task::where('user_id', Auth::user()->id)->findOrFail($taskId);
+        
         $task->completed = !$task->completed;
         $task->save();
     

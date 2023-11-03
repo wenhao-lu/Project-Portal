@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kevin's Family Wellness Hub</title>
+    <title>Kevin's Application Portal</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="{{url('app.css')}}">
@@ -13,10 +13,10 @@
     
 </head>
 <body>
-
+    <!-- Home Page -->
 <header class="w3-padding">
 
-    <h1 class="welcome-text">Welcome to Kevin's Family Wellness Hub</h1>
+    <h1 class="welcome-text">Welcome to Kevin's Application Portal</h1>
 
 </header>
 
