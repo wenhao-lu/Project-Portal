@@ -1,2 +1,2 @@
-# family-console
-A task/plan management portal for family members
+# Project Portal
+A Content Management System (CMS) that serves as a portal for my developed/developing projects.
