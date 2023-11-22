@@ -9,12 +9,14 @@
     -->
 
     <ul id="consoleMain">
+        <!--
         <li><a href="/console/projects/list">Projects</a></li>
         <li><a href="/console/types/list">Types</a></li>
         <li><a href="/console/skills/list">Skills</a></li>
         <li><a href="/console/educations/list">Educations</a></li>
         <li><a href="/console/users/list">Users</a></li>
         <li><a href="/console/stacks/list">Stacks</a></li>
+        -->
         <li><a href="/console/tips/list">Tips</a></li>
         <li><a href="/console/tasks/list">Tasks</a></li>
         
