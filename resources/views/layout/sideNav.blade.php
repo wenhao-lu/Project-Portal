@@ -48,13 +48,16 @@
 <div class="w3-padding">
 
     <ul id="dashboard">
+        <!--
         <li><a href="/console/projects/list">Manage Projects</a></li>
         <li><a href="/console/types/list">Manage Types</a></li>
         <li><a href="/console/users/list">Manage Users</a></li>
         <li><a href="/console/skills/list">Manage Skills</a></li>
         <li><a href="/console/educations/list">Manage Educations</a></li>
         <li><a href="/console/stacks/list">Manage Stacks</a></li>
+        -->
         <li><a href="/console/tips/list">Manage Tips</a></li>
+        <li><a href="/console/tasks/list">Manage To-Do List</a></li>
         <li><a href="/console/logout">Log Out</a></li>
     </ul>
 
