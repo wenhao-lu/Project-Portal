@@ -1,6 +1,4 @@
 @extends ('layout.console')
-@extends ('layout.sideNav')
-
 @section ('content')
 
 <section class="w3-padding">

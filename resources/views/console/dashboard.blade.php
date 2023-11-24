@@ -1,8 +1,7 @@
 @extends ('layout.console')
-@extends ('layout.sideNav')
 @section ('content')
 
-<section class="w3-padding">
+<section class="main-content">
     <!-- 
     <p class="mainTitle">Content Management System</p>
     <p class="mainTitle">Control Panel</p>
@@ -29,10 +28,10 @@
             <div class="card-img">
                 <img src="/images/card-img-1.png" alt="card-img-1" class="card-img-1">
             </div>
-            <p class="everyday-tips">Everyday Tips</p>
+            <p class="card-sub-title">Everyday Tips</p>
 
         @php
-            $latestTip = App\Models\Tip::latest()->first(); // Retrieve the latest tip
+            $latestTip = App\Models\Tip::latest()->first(); 
         @endphp
 
         @if ($latestTip)
@@ -44,6 +43,28 @@
         @endif
         </div>
 
+        <div class="widget-tasks widget-card">
+            <div class="card-img">
+                <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
+            </div>
+            <p class="card-sub-title">To-Do List</p>
+
+        @php
+            $latestTask = App\Models\Task::latest()->first(); 
+        @endphp
+
+        @if ($latestTask)
+            <p class="card-text-1"><a href="/console/tasks/list">Things To Do</a></p>
+            <p class="card-text-2">{{ $latestTask->title }}</p>
+            <p class="card-text-3">{{ $latestTask->created_at->format('H:i, M j, Y')}}</p>
+        @else
+            <p>No tasks available at the moment.</p>
+        @endif
+        </div>
+
+
+
+    <!--  project widget 
         <div class="widget-projects widget-card">
         @php
             $latestProject = App\Models\Project::latest()->first(); 
@@ -57,7 +78,7 @@
             <p>No projects available at the moment.</p>
         @endif
         </div>
-
+    -->
 
 
     </div>

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Cormorant+Garamond:wght@300;400;500&family=Lato&family=Lobster&family=Playfair+Display&family=Press+Start+2P&family=Righteous&family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&family=League+Spartan&family=Ubuntu&display=swap");
 
+/* Front page */ 
 .welcome-text {
     text-align: center;
     color: #3a86ff;
@@ -25,7 +26,7 @@ body {
 }
 
 .console-header {
-    background-color: #333;
+    background-color: #2685db;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -56,7 +57,14 @@ hr {
     text-align: center;
     font-weight: bold;
 }
-
+.event-msg{
+    text-align: center;
+    font-weight: bold;
+    color: #ff0000;
+    position: fixed;
+    top:20%;
+    left:50%;
+}
 .content {
     background-color: #fff;
     padding: 20px;
@@ -67,39 +75,48 @@ hr {
     background-image: linear-gradient(45deg, #ff00ff, #00ffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-left: 0.6em;
 }
 .topContainer {
     display: flex;
-    flex-flow: column;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
+}
+.site-logo{
+    display: flex;
+}
+.logo-img{
+    display: flex;
+    height: 3vw;
+}  
+.logo{
+    max-width:100%;
+    max-height:100%;
 }
 .header-title {
     text-align: center;
     font-size: 48px;
     font-weight: bold;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-top: 0;
-    padding-top: 10px;
-    font-size: 36px;
+    padding-top: 6px;
+    font-size: 1.3em;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 0 10px;
+    font-family: 'Ubuntu', sans-serif;
 }
 .nav1 {
-    margin-right: 6em;
-    margin-left: 6em;
+    margin-right: 4em;
+    margin-left: 2em;
     text-decoration: none;
 }
 .nav1:hover,
 .nav2:hover,
 .nav3:hover {
-    color: #007bff;
+    color: #92c0f1;
     cursor: pointer;
 }
 .nav2 {
-    margin-right: 6em;
     text-decoration: none;
 }
 .nav3 {
@@ -107,7 +124,7 @@ hr {
 }
 
 
-/* dashbaord styles */
+/* dashbaord */
 
 
 .mainTitle{
@@ -120,6 +137,44 @@ text-shadow: 2px 2px 2px #333;
 color: #3e50f5;
 letter-spacing: 2px;
 }
+
+/* SideNav */
+.side-navi{
+    margin-left:2em;
+}
+.side-nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    background-color: white;
+    height: 75vh;
+}
+
+.side-nav-list li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    padding:2em;
+}
+
+.side-nav-list li a:hover {
+    font-weight: 700;
+    color:#000;
+}
+.main-container{
+    display: flex;
+}
+.fa-home,
+.fa-tachometer-alt,
+.fa-lightbulb,
+.fa-tasks,
+.fa-sign-out-alt{
+    padding-right:0.5em;
+}
+
 
 
 /* Section Link(consoleMain) styles */
@@ -239,7 +294,7 @@ letter-spacing: 2px;
 /* widget card */ 
 
 .widgets-container{
-    margin-left: 15rem;
+    margin-left: 2rem;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -253,7 +308,7 @@ letter-spacing: 2px;
 .widget-card:hover {
 transform: translate(4px, -4px); 
 }
-.everyday-tips{
+.card-sub-title{
     color:grey;
     font-family: 'Ubuntu', sans-serif;
     padding:10px;
@@ -284,7 +339,8 @@ transform: translate(4px, -4px);
     padding-right:30px;
     margin-top:0;
 }
-.card-img-1{
+.card-img-1,
+.card-img-2{
     width: 100%;
     height: 100%;
     border-radius: 5px 5px 0 0;
