@@ -45,7 +45,9 @@
 
         <div class="widget-tasks widget-card">
             <div class="card-img">
-                <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
+                <a href="/console/tasks/list">
+                    <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
+                </a>
             </div>
             <p class="card-sub-title">To-Do List</p>
 
