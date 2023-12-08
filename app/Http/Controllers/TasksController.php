@@ -59,16 +59,14 @@ class TasksController extends Controller
         ]);
 
         // Ensure the task belongs to the authenticated user before editing
-        if ($task->user_id === Auth::user()->id) {
+
             $task->title = $attributes['title'];
             $task->completed = $attributes['completed'];
             $task->save();
 
             return redirect('/console/tasks/list')
             ->with('message', 'Task has been edited!');
-        } else {
-            return abort(403); // Unauthorized access
-        }
+
     }
 
 
@@ -76,14 +74,12 @@ class TasksController extends Controller
     {
 
         // Ensure the task belongs to the authenticated user before deleting
-        if ($task->user_id === Auth::user()->id) {
+        
             $task->delete();
 
             return redirect('/console/tasks/list')
                 ->with('message', 'Task has been deleted!');
-        } else {
-            return abort(403); // Unauthorized access
-        }   
+
     }
 
 

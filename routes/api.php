@@ -9,6 +9,8 @@ use App\Models\Project;
 use App\Models\Skill;
 use App\Models\Education;
 use App\Models\Contact;
+use App\Models\Tip;
+use App\Models\Task;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +80,21 @@ Route::get('/skills', function(){
     return $skills;
 
 });
+
+Route::get('/tips', function(){
+
+    $tips = Tip::orderBy('title')->get();
+    return $tips;
+
+});
+
+Route::get('/tasks', function(){
+
+    $tasks = Task::orderBy('title')->get();
+    return $tasks;
+
+});
+
 
 
 Route::middleware('cors')->post('/contacts', function () {

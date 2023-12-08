@@ -8,6 +8,7 @@
 .env host
 .env WHC
 .env.example
+.env_c9674390_project
 cms.sql
 dev_process.md
 GitHub.md
@@ -25,3 +26,4 @@ yarn-error.log
 .DS_Store
 /SQL/c9674390_cms_0920.sql
 PHP code.txt
+project.sql

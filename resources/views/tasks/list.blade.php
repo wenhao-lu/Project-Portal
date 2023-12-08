@@ -34,7 +34,9 @@
 <section class="w3-padding">
     <div class="container">
         <p class="taskTitle">To Do List</p>
-
+        <p class="task-user">For
+        <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong>
+        </p>
         <form method="post" action="/console/tasks/add" novalidate class="w3-margin-bottom">
 
 @csrf
@@ -56,34 +58,6 @@
 
 
 </form>
-
-<!-- 
-<ul class="task-list">
-    @foreach ($tasks as $task)
-        <li>
-            <input
-                type="checkbox"
-                class="task-checkbox"
-                id="task-{{ $task->id }}"
-                data-task-id="{{ $task->id }}"
-                {{ $task->completed ? 'checked' : '' }}
-            >
-            <label
-                for="task-{{ $task->id }}"
-                class="{{ $task->completed ? 'completed' : '' }}"
-            >
-                {{ $task->title }}
-            </label>
-
-            <a class="task-edit-btn" href="/console/tasks/edit/{{$task->id}}">Edit</a>
-            <a href="/console/tasks/delete/{{$task->id}}">Delete</a>
-
-
-
-        </li>
-    @endforeach
-</ul>
--->
 
         <table class="taskTable">
             <tr class="banner">
