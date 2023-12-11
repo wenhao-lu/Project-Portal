@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{url('app.css')}}">
 
-        <script src="{{url('app.js')}}"></script>
+        <script src="{{asset('app.js')}}"></script>
         <script src="https://kit.fontawesome.com/824fcf09e8.js" crossorigin="anonymous"></script>
  
     </head>
@@ -19,17 +19,20 @@
         <header class="console-header">
             <div class="topContainer">
                 <div class="site-logo">
+                    <!-- mobile menu -->
+                    <div id="mobile-menu">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                     <div class="logo-img"><img src="/images/logo.png" alt="logo" class="logo"></div>
                     <h1 class="header-title">Project Portal</h1>
                 </div>
+
                 <div class="navContainer">
                     @if (Auth::check())
-                        Welcome back <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong>
+                        <p>Welcome back</p> <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong>
                         <a href="/console/logout" class="nav1">
                         <i class="fas fa-sign-out-alt"></i>
                         </a> 
-                        <!--<a href="/console/dashboard" class="nav2">Dashboard</a>  -->
-                        <!--<a href="/" class="nav3">Home Page</a>-->
                     @else
                         <a href="/">Return to HomePage</a>
                     @endif
@@ -39,16 +42,13 @@
         </header>
  
     <div class="main-container">
-        <div class="side-navi">
+        <div id="side-navi">
             <ul class="side-nav-list">
-                <!--
-                <li><a href="/console/projects/list">Manage Projects</a></li>
-                <li><a href="/console/types/list">Manage Types</a></li>
-                <li><a href="/console/users/list">Manage Users</a></li>
-                <li><a href="/console/skills/list">Manage Skills</a></li>
-                <li><a href="/console/educations/list">Manage Educations</a></li>
-                <li><a href="/console/stacks/list">Manage Stacks</a></li>
-                -->
+            @if (Auth::check())
+                <li class="nav-list-name">
+                    <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong>
+                </li>
+                @endif
                 <li><a href="/" class="nav3">
                     <i class="fas fa-home"></i>    
                     Home Page</a></li>

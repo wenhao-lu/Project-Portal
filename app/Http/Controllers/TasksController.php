@@ -12,8 +12,10 @@ class TasksController extends Controller
 {
     public function list()
     {
-        // Fetch tasks associated with the authenticated user 
-        $tasks = Task::where('user_id', Auth::user()->id)->get();
+        // Fetch tasks associated with the authenticated user, lastest first 
+        $tasks = Task::where('user_id', Auth::user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
         
         return view('tasks.list', [ 
             'tasks' => $tasks, 

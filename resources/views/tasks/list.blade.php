@@ -6,7 +6,7 @@
 
 <script>
     $(document).ready(function () {
-        // Attach a click event handler to all checkboxes with class 'task-checkbox'
+        // click event handler to all checkboxes with class 'task-checkbox'
         $('.task-checkbox').on('click', function () {
             const taskId = $(this).data('task-id');
             const isCompleted = $(this).prop('checked');
@@ -31,7 +31,7 @@
 
 
 
-<section class="w3-padding">
+<section class="task-section">
     <div class="container">
         <p class="taskTitle">To Do List</p>
         <p class="task-user">For
@@ -43,7 +43,7 @@
 
 <div class="task-input-container">
 <div class="task-input">
-&#9998;    
+<i class="fas fa-pencil-alt"></i>
 <label for="title"></label>
     <input class="task-title" placeholder="Add a New Task" type="text" name="title" id="title" value="{{old('title')}}" required>
     
@@ -100,18 +100,27 @@
 @endsection
 
 <style>
-  input:focus {
+.task-section{
+    margin: 1em auto;
+    width: 80vw;
+}
+input:focus {
     outline: none;
 }
-  .task-input-container{
+.task-input-container{
     display:flex;
     justify-content:center;
-  }
+}
 .task-input{
   max-width: 20vw;
   text-align: center;
   border: 1px solid;
   border-radius: 5px;
+  display: flex;
+}
+.fa-pencil-alt{
+    margin-left: 1em;
+    align-self: center;
 }
 .task-title{
   border: none;
@@ -152,11 +161,11 @@
     padding-left: 0 !important;
 }
 .taskTitle {
-    font-size: 36px;
+    font-size:2em;
     font-weight: bold;
     text-align: center;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
     color: #00263b;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -164,10 +173,8 @@
 }
 
 .container {
-    min-width: 81%;
-    max-width: 93%;
-    margin-left: 15em;
     background-color: white;
+    margin: 1em;
     padding: 1em;
     border-radius: 15px;
 }
@@ -206,9 +213,9 @@
 }
 
 table {
-    width: 70%;
+    width: 80%;
     border-collapse: collapse;
-    margin-bottom: 30px;
+    margin-bottom: 1.5em;
     margin:0 auto;
 }
 
@@ -219,13 +226,12 @@ th {
     padding: 10px;
 }
 
-/* Define the table cell styles */
 td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 0.5em;
+    font-size: 1em;
 }
 
-/* Define the table link styles */
 a {
     color: #f44336;
     text-decoration: none;

@@ -2,6 +2,9 @@
 @section ('content')
 
 <section class="main-content">
+    <div class="section-title-container">
+        <p class="section-title">DASHBOARD</p>
+    </div>    
     <div class="widgets-container">
         <!-- Widget 1 -->
         <div class="widget-tips widget-card">
