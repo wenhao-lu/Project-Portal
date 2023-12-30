@@ -1,6 +1,154 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Cormorant+Garamond:wght@300;400;500&family=Lato&family=Lobster&family=Playfair+Display&family=Press+Start+2P&family=Righteous&family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&family=League+Spartan&family=Ubuntu&display=swap");
 
 /* Front page */ 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f8f6;
+}
+hr{
+    margin:0;
+}
+
+.text-greeting{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em 0 0.5em 0;
+    color: #4C8AF2;
+}
+
+
+/* project section */
+.project-container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 3em 0;
+    border-radius: 3px;
+}
+.project-grid-item{
+    padding: 2em 0;
+}
+.project-card{
+    border: 2px solid #e8e0e0;
+    border-radius: 5px;
+    background-color: azure;
+    transition: transform 1s ease;
+}
+.project-image{
+    padding:5px;
+
+}
+.project-image a img{
+    border: 1px solid azure;
+    border-radius: 5px;
+    transition: transform 1s ease;
+    width: 18em;
+}
+/*.project-image a img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}*/
+.project-card:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.project-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.project-content{
+    font-size: 0.8em;
+    text-align: center;
+    font-style: italic;
+    width: 20em;
+    margin: auto;
+}
+.project-link-container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.project-link{
+    text-align: center;
+}
+.project-link a img{
+    width: 60%;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+.project-link a img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+/* Contact section */
+.contact-text{
+    text-align: center;
+    color: #4C8AF2;
+}
+.contact-link-container{
+    display: flex;
+    justify-content: center;
+}
+.contact-link{
+    text-align: center;
+}
+.contact-link a img{
+    width: 60%;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+.contact-link a img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Login section */
+.front-login{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.front-login p{
+    text-align: center;
+    font-size: 1.5em;
+}
+.front-login a{
+    text-align: center;
+    font-size: 1.5em;
+    color: #4C8AF2;
+}
+.copyright{
+    padding-top: 1.5em;
+    text-align: center;
+    color: grey;
+}
+.login-box{
+    text-align: center;
+    padding-top: 5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* old */ 
 .welcome-text {
     text-align: center;
     color: #3a86ff;

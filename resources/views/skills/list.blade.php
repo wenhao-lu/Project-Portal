@@ -1,5 +1,4 @@
 @extends ('layout.console')
-@extends ('layout.sideNav')
 
 @section ('content')
 
