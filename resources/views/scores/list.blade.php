@@ -1,34 +1,31 @@
 @extends ('layout.console')
-@extends ('layout.sideNav')
 
 @section ('content')
 
 <section class="w3-padding">
     <div class="container">
-    <p class="title">Manage Contacts</p>
+    <p class="title">Manage Scores</p>
 
     <table>
         <tr class="banner">
-            <th></th>
             <th>Name</th>
-            <th>email</th>
-            <th>Msg</th>
-            <th></th>
+            <th>Level</th>
+            <th>Points</th>
             <th></th>
             <th></th>
         </tr>
-        @foreach ($contacts as $contact)
+        @foreach ($scores as $score)
             <tr>
-                <td>{{$contact->name}}</td>
-                <td>{{$contact->email}}</td>
-                <td>{{$contact->msg}}</td>
-                <td><a href="/console/contacts/edit/{{$contact->id}}">Edit</a></td>
-                <td><a href="/console/contacts/delete/{{$contact->id}}">Delete</a></td>
+                <td>{{$score->name}}</td>
+                <td>{{$score->level}}</td>
+                <td>{{$score->points}}</td>
+                <td><a href="/console/scores/edit/{{$score->id}}">Edit</a></td>
+                <td><a href="/console/scores/delete/{{$score->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
 
-    <a href="/console/contacts/add" class="addBtn">New Contact</a>
+    <a href="/console/scores/add" class="addBtn">New Score</a>
     </div>
 </section>
 

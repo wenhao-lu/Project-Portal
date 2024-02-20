@@ -61,6 +61,48 @@
                 <li><a href="/console/tasks/list">
                     <i class="fas fa-tasks"></i>
                     To-Do List</a></li>
+                <!-- Section settings -->
+                <li><a href="/console/projects/list">
+                    <i class="fas fa-tasks"></i>
+                    Projects</a>
+                </li>
+
+                <li><a href="/console/types/list">
+                    <i class="fas fa-tasks"></i>
+                    Types</a>
+                </li>
+
+                <li><a href="/console/skills/list">
+                    <i class="fas fa-tasks"></i>
+                    Skills</a>
+                </li>
+
+                <li><a href="/console/educations/list">
+                    <i class="fas fa-tasks"></i>
+                    Educations</a>
+                </li>
+
+                <li><a href="/console/users/list">
+                    <i class="fas fa-tasks"></i>
+                    Users</a>
+                </li>
+
+                <li><a href="/console/stacks/list">
+                    <i class="fas fa-tasks"></i>
+                    Stacks</a>
+                </li>
+
+                <li><a href="/console/contacts/list">
+                    <i class="fas fa-tasks"></i>
+                    Contacts</a>
+                </li>
+
+                <li><a href="/console/scores/list">
+                    <i class="fas fa-tasks"></i>
+                    Scores</a>
+                </li>
+                
+
                 <li><a href="/console/logout">
                     <i class="fas fa-sign-out-alt"></i>
                     Log Out</a></li>

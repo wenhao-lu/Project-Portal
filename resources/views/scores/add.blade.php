@@ -1,59 +1,50 @@
 @extends ('layout.console')
+
 @section ('content')
 
 <section class="w3-padding">
 <div class="container">
-    <h2 class="title">Add User</h2>
+    <h2 class="title">Add Score</h2>
 
-    <form method="post" action="/console/users/add" novalidate class="w3-margin-bottom">
+    <form method="post" action="/console/scores/add" novalidate class="w3-margin-bottom">
 
         @csrf
 
         <div class="w3-margin-bottom">
-            <label for="first">First Name:</label>
-            <input type="text" name="first" id="first" value="{{old('first')}}" required>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{old('name')}}" required>
             
-            @if ($errors->first('first'))
+            @if ($errors->first('name'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('first')}}</span>
+                <span class="w3-text-red">{{$errors->first('name')}}</span>
             @endif
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="last">Last Name:</label>
-            <input type="text" name="last" id="last" value="{{old('last')}}" required>
+            <label for="level">Level:</label>
+            <input type="text" name="level" id="level" value="{{old('level')}}">
 
-            @if ($errors->first('last'))
+            @if ($errors->first('level'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('last')}}</span>
+                <span class="w3-text-red">{{$errors->first('level')}}</span>
             @endif
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"  required>
+            <label for="points">Points:</label>
+            <input type="text" name="points" id="points" value="{{old('points')}}" required>
 
-            @if ($errors->first('email'))
+            @if ($errors->first('points'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('email')}}</span>
+                <span class="w3-text-red">{{$errors->first('points')}}</span>
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
-
-            @if ($errors->first('password'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('password')}}</span>
-            @endif
-        </div>
-
-        <button type="submit" class="addBtn">Add User</button>
+        <button type="submit" class="addBtn">Add Score</button>
 
     </form>
 
-    <a href="/console/users/list">Back to User List</a>
+    <a href="/console/scores/list">Back to Score List</a>
     </div>
 </section>
 

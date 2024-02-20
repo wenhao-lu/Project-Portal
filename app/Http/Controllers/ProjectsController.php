@@ -34,7 +34,7 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => 'required|unique:projects|regex:/^[A-z\-]+$/',
+            'slug' => 'nullable|url',
             'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',
@@ -67,11 +67,7 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => [
-                'required',
-                Rule::unique('projects')->ignore($project->id),
-                'regex:/^[A-z\-]+$/',
-            ],
+            'slug' => 'nullable|url',
             'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',

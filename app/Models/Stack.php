@@ -10,7 +10,8 @@ class Stack extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title'
+        'title',
+        'url',
     ];
 
     public function projects()

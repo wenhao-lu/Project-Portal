@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Skill;
 use App\Models\Education;
+use App\Models\Score;
 use App\Models\Contact;
 use App\Models\Tip;
 use App\Models\Task;
@@ -96,7 +97,7 @@ Route::get('/tasks', function(){
 });
 
 
-
+// Handle API requests for the portfolio contacts 
 Route::middleware('cors')->post('/contacts', function () {
     
 });
@@ -108,7 +109,6 @@ Route::post('/contacts', function(Request $request) {
         'msg' => 'required',
     ]);
 
-     // Create a new Contact instance and set the data
      $contact = new Contact();
      $contact->name = $validatedData['name'];
      $contact->email = $validatedData['email'];
@@ -125,5 +125,39 @@ Route::get('/contacts/list', function(){
 
     $contacts = Contact::orderBy('name')->get();
     return $contacts;
+
+});
+
+
+
+// Handle API requests for the HTML Game 
+Route::middleware('cors')->post('/scores', function () {
+    
+});
+
+Route::post('/scores', function(Request $request) {
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'level' => 'required',
+        'points' => 'required',
+    ]);
+
+     // Create a new Score instance and set the data
+     $score = new Score();
+     $score->name = $validatedData['name'];
+     $score->level = $validatedData['level'];
+     $score->points = $validatedData['points'];
+ 
+     // Save the scores in the database
+     $score->save();
+ 
+     // Return a response indicating success
+     return response()->json(['message' => 'Scores sent successfully']);
+});
+
+Route::get('/scores/list', function(){
+
+    $scores = Score::orderBy('points')->get();
+    return $scores;
 
 });

@@ -7,6 +7,7 @@ use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationsController;
+use App\Http\Controllers\ScoresController;
 use App\Http\Controllers\StacksController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\TipsController;
@@ -108,3 +109,10 @@ Route::get('/console/tasks/edit/{task:id}', [TasksController::class, 'editForm']
 Route::post('/console/tasks/edit/{task:id}', [TasksController::class, 'edit'])->where('task', '[0-9]+')->middleware('auth');
 Route::get('/console/tasks/delete/{task:id}', [TasksController::class, 'delete'])->where('task', '[0-9]+')->middleware('auth');
 Route::post('/console/tasks/toggle', [TasksController::class, 'toggleTaskStatus'])->where('task', '[0-9]+')->middleware('auth');
+
+Route::get('/console/scores/list', [ScoresController::class, 'list'])->middleware('auth');
+Route::get('/console/scores/add', [ScoresController::class, 'addForm'])->middleware('auth');
+Route::post('/console/scores/add', [ScoresController::class, 'add'])->middleware('auth');
+Route::get('/console/scores/edit/{score:id}', [ScoresController::class, 'editForm'])->where('score', '[0-9]+')->middleware('auth');
+Route::post('/console/scores/edit/{score:id}', [ScoresController::class, 'edit'])->where('score', '[0-9]+')->middleware('auth');
+Route::get('/console/scores/delete/{score:id}', [ScoresController::class, 'delete'])->where('score', '[0-9]+')->middleware('auth');

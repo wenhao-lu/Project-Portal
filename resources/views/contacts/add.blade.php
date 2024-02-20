@@ -1,18 +1,17 @@
 @extends ('layout.console')
-@extends ('layout.sideNav')
 @section ('content')
 
 <section class="w3-padding">
 <div class="container">
-    <h2 class="title">Edit Contact</h2>
+    <h2 class="title">Add Contact</h2>
 
-    <form method="post" action="/console/contacts/edit/{{$contact->id}}" novalidate class="w3-margin-bottom">
+    <form method="post" action="/console/contacts/add" novalidate class="w3-margin-bottom">
 
         @csrf
 
         <div class="w3-margin-bottom">
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name" value="{{old('name', $contact->name)}}" required>
+            <input type="text" name="name" id="name" value="{{old('name')}}" required>
             
             @if ($errors->first('name'))
                 <br>
@@ -22,7 +21,7 @@
 
         <div class="w3-margin-bottom">
             <label for="email">email:</label>
-            <input type="text" name="email" id="email" value="{{old('email', $contact->email)}}">
+            <input type="text" name="email" id="email" value="{{old('email')}}">
 
             @if ($errors->first('email'))
                 <br>
@@ -32,7 +31,7 @@
 
         <div class="w3-margin-bottom">
             <label for="msg">Msg:</label>
-            <input type="text" name="msg" id="msg" value="{{old('msg', $contact->msg)}}" required>
+            <input type="text" name="msg" id="msg" value="{{old('msg')}}" required>
 
             @if ($errors->first('msg'))
                 <br>
@@ -40,7 +39,7 @@
             @endif
         </div>
 
-        <button type="submit" class="addBtn">Edit Contact</button>
+        <button type="submit" class="addBtn">Add Contact</button>
 
     </form>
 
@@ -102,6 +101,4 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
 </style>
-

@@ -10,7 +10,7 @@
         <tr class="banner">
             <th></th>
             <th>Title</th>
-            <th>Slug</th>
+            <th>GitHub</th>
             <th>Type</th>
             <th>Created</th>
             <th></th>

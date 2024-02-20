@@ -30,7 +30,7 @@
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="slug">Slug:</label>
+            <label for="slug">GitHub:</label>
             <input type="text" name="slug" id="slug" value="{{old('slug', $project->slug)}}" required>
 
             @if ($errors->first('slug'))
