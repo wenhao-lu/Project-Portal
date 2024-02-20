@@ -114,12 +114,17 @@ hr{
     display: flex;
     flex-flow: column;
     justify-content: center;
+    color: #4C8AF2;
 }
 .front-login p{
     text-align: center;
     font-size: 1.5em;
 }
 .front-login a{
+    text-align: center;
+    font-size: 1.5em;
+}
+.front-logged{
     text-align: center;
     font-size: 1.5em;
     color: #4C8AF2;

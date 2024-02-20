@@ -11,6 +11,11 @@
 
     <script src="{{url('app.js')}}"></script>
     
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
 </head>
 <body>
 
@@ -31,12 +36,14 @@
 <footer class="w3-padding">
 
     @if (Auth::check())
-        You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} | 
+    <div class="front-logged">
+        You are logged in as <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong> | 
         <a href="/console/logout">Log Out</a> | 
         <a href="/console/dashboard">Dashboard</a>
+    </div>
     @else
     <div class="front-login">
-        <p>Log In for Individual Apps</p>
+        <p>Log Into the CMS Dashboard</p>
         <a href="/console/login">Login</a>
     </div>    
     @endif
