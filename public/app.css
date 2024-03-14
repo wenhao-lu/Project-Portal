@@ -399,6 +399,13 @@ transform: translate(4px, -4px);
     padding-right:30px;
     margin-top:0;
 }
+.card-text-wrap{
+    display: flex;
+    flex-flow: row wrap;
+}
+.card-text-wrap ul{
+    margin-top: 0;
+}
 .card-img-1,
 .card-img-2{
     width: 100%;
@@ -422,6 +429,87 @@ transform: translate(4px, -4px);
     margin-left: 1em;
     align-self: center;
 }
+
+
+/* Portfolio CMS section */
+.container{
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 15px;
+}
+.cms-section{
+    margin:1em auto;
+    width:80%;
+}
+.cmsTitle{
+    font-size:2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: #00263b;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2em;
+}
+.cms-sector-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: auto;
+}
+.cms-sector-title{
+    font-weight: bold;
+}
+.cms-sector-link{
+    border-radius: 10px;
+    background-color: #e5fbff;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    text-decoration: none;
+    margin: 1em;
+}
+.cms-sector-link p{
+    font-size: 1.2em;
+    padding-left: 2em;
+}
+.cms-sector-icon{
+    width: 10%;
+    border-radius: 10px;
+    margin: 0.5em 2em;
+}
+.cms-sector-link:hover{
+    transform: translate(2px,-2px);
+}
+.button-wrap{
+    text-align: center;
+    margin: 2em;
+}
+.cms-button{
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius:15px;
+}
+.cms-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+.left-button{
+    margin-right: 1em;
+}
+
+
+
 
 
 @media(max-width:500px){

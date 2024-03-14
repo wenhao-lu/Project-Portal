@@ -7,6 +7,34 @@
     </div>    
     <div class="widgets-container">
         <!-- Widget 1 -->
+        <div class="widget-tasks widget-card">
+            <div class="card-img">
+                <a href="/console/portfolioCMS/index">
+                    <img src="/images/cms.webp" alt="card-img-2" class="card-img-2">
+                </a>
+            </div>
+            <p class="card-sub-title">Portfolio CMS</p>
+
+            <p class="card-text-1"><a href="/console/portfolioCMS/index">Content Management</a></p>
+            <div class="card-text-wrap">
+                <ul>
+                    <li>Skills</li>
+                    <li>Stacks</li>
+                    <li>Projects</li>
+                    <li>Educations</li>
+                </ul>
+                <ul>
+                    <li>Types</li>
+                    <li>Users</li>
+                    <li>Scores</li>
+                    <li>Contacts</li>
+                </ul>
+            </div>
+            
+
+        </div>
+
+        <!-- Widget 2 -->
         <div class="widget-tips widget-card">
             <div class="card-img">
                 <img src="/images/card-img-1.png" alt="card-img-1" class="card-img-1">
@@ -26,7 +54,7 @@
         @endif
         </div>
 
-        <!-- Widget 2 -->
+        <!-- Widget 3 -->
         <div class="widget-tasks widget-card">
             <div class="card-img">
                 <a href="/console/tasks/list">
@@ -55,27 +83,7 @@
         @endif
         </div>
 
-        <!-- Widget 3 -->
-        <div class="widget-tasks widget-card">
-            <div class="card-img">
-                <a href="/console/tasks/list">
-                    <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
-                </a>
-            </div>
-            <p class="card-sub-title">To-Do List</p>
-
-        @php
-            $latestTask = App\Models\Task::latest()->first(); 
-        @endphp
-
-        @if ($latestTask)
-            <p class="card-text-1"><a href="/console/tasks/list">Things To Do</a></p>
-            <p class="card-text-2">{{ $latestTask->title }}</p>
-            <p class="card-text-3">{{ $latestTask->created_at->format('H:i, M j, Y')}}</p>
-        @else
-            <p>No tasks available at the moment.</p>
-        @endif
-        </div>
+        
 
         <!-- Widget 4 -->
         <div class="widget-tasks widget-card">

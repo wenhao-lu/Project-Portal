@@ -12,6 +12,7 @@ use App\Http\Controllers\StacksController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\TipsController;
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers\PortfolioCMSController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +39,11 @@ Route::get('/project/{project:slug}', function (Project $project) {
 })->where('project', '[A-z\-]+');
 
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
-Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest');
+Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('console.login');
 Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest');
 Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
+
+Route::get('/console/portfolioCMS/index', [PortfolioCMSController::class, 'index'])->middleware('auth');
 
 Route::get('/console/projects/list', [ProjectsController::class, 'list'])->middleware('auth');
 Route::get('/console/projects/add', [ProjectsController::class, 'addForm'])->middleware('auth');

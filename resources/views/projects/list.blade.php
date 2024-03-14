@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<section class="w3-padding">
+<section class="cms-section">
     <div class="container">
     <p class="projectTitle">Manage Projects</p>
 
@@ -10,8 +10,8 @@
         <tr class="banner">
             <th></th>
             <th>Title</th>
+            <th>Live</th>
             <th>GitHub</th>
-            <th>Type</th>
             <th>Created</th>
             <th></th>
             <th></th>
@@ -26,11 +26,15 @@
                 </td>
                 <td>{{$project->title}}</td>
                 <td>
+                    <a href="/project/{{$project->url}}">
+                        {{$project->url}}
+                    </a>
+                </td>
+                <td>
                     <a href="/project/{{$project->slug}}">
                         {{$project->slug}}
                     </a>
                 </td>
-                <td>{{$project->type->title}}</td>
                 <td>{{$project->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/projects/image/{{$project->id}}">Image</a></td>
                 <td><a href="/console/projects/edit/{{$project->id}}">Edit</a></td>
@@ -38,8 +42,10 @@
             </tr>
         @endforeach
     </table>
-
-    <a href="/console/projects/add" class="addBtn">New Project</a>
+    <div class="button-wrap">
+      <a href="/console/projects/add" class="cms-button left-button">New Project</a>
+      <a href="/console/portfolioCMS/index" class="cms-button">Return Back</a>
+    </div>
     </div>
 
 </section>
@@ -57,14 +63,6 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.container {
-  min-width: 81%;
-  max-width: 83%;
-  margin-left: 15em;
-  background-color:white;
-  padding:1em;
-  border-radius:15px;
 }
 .banner {
   background-color: #5bc0de;
