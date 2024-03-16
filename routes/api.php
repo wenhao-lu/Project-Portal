@@ -12,6 +12,7 @@ use App\Models\Score;
 use App\Models\Contact;
 use App\Models\Tip;
 use App\Models\Task;
+use App\Models\Showcase;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::get('/types', function(){
 
 });
 
+// Project
 Route::get('/projects', function(){
 
     $projects = Project::orderBy('created_at')->get();
@@ -67,6 +69,41 @@ Route::get('/projects/profile/{project?}', function(Project $project){
     return $project;
 
 });
+
+// Showcase
+Route::get('/showcases', function(){
+
+    $showcases = Showcase::orderBy('created_at')->get();
+
+    foreach($showcases as $key => $showcase)
+    {
+        $showcases[$key]['user'] = User::where('id', $showcase['user_id'])->first();
+        $showcases[$key]['type'] = Type::where('id', $showcase['type_id'])->first();
+
+        if($showcase['image'])
+        {
+            $showcases[$key]['image'] = env('APP_URL').'storage/'.$showcase['image'];
+        }
+    }
+
+    return $showcases;
+
+});
+
+Route::get('/showcases/profile/{showcase?}', function(Showcase $showcase){
+
+    $showcase['user'] = User::where('id', $showcase['user_id'])->first();
+    $showcase['type'] = Type::where('id', $showcase['type_id'])->first();
+
+    if($showcase['image'])
+    {
+        $showcase['image'] = env('APP_URL').'storage/'.$showcase['image'];
+    }
+
+    return $showcase;
+
+});
+
 
 Route::get('/educations', function(){
 

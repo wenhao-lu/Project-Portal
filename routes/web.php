@@ -13,6 +13,7 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\TipsController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\PortfolioCMSController;
+use App\Http\Controllers\ShowcasesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,15 @@ Route::post('/console/projects/edit/{project:id}', [ProjectsController::class, '
 Route::get('/console/projects/delete/{project:id}', [ProjectsController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
 Route::get('/console/projects/image/{project:id}', [ProjectsController::class, 'imageForm'])->where('project', '[0-9]+')->middleware('auth');
 Route::post('/console/projects/image/{project:id}', [ProjectsController::class, 'image'])->where('project', '[0-9]+')->middleware('auth');
+
+Route::get('/console/showcases/list', [ShowcasesController::class, 'list'])->middleware('auth');
+Route::get('/console/showcases/add', [ShowcasesController::class, 'addForm'])->middleware('auth');
+Route::post('/console/showcases/add', [ShowcasesController::class, 'add'])->middleware('auth');
+Route::get('/console/showcases/edit/{showcase:id}', [ShowcasesController::class, 'editForm'])->where('showcase', '[0-9]+')->middleware('auth');
+Route::post('/console/showcases/edit/{showcase:id}', [ShowcasesController::class, 'edit'])->where('showcase', '[0-9]+')->middleware('auth');
+Route::get('/console/showcases/delete/{showcase:id}', [ShowcasesController::class, 'delete'])->where('showcase', '[0-9]+')->middleware('auth');
+Route::get('/console/showcases/image/{showcase:id}', [ShowcasesController::class, 'imageForm'])->where('showcase', '[0-9]+')->middleware('auth');
+Route::post('/console/showcases/image/{showcase:id}', [ShowcasesController::class, 'image'])->where('showcase', '[0-9]+')->middleware('auth');
 
 Route::get('/console/users/list', [UsersController::class, 'list'])->middleware('auth');
 Route::get('/console/users/add', [UsersController::class, 'addForm'])->middleware('auth');
