@@ -67,6 +67,16 @@
                     Projects</a>
                 </li>
 
+                <li><a href="/console/showcases/list">
+                    <i class="fas fa-tasks"></i>
+                    Showcases</a>
+                </li>
+
+                <li><a href="/console/works/list">
+                    <i class="fas fa-tasks"></i>
+                    Works</a>
+                </li>
+
                 <li><a href="/console/types/list">
                     <i class="fas fa-tasks"></i>
                     Types</a>

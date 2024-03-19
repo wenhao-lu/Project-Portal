@@ -43,6 +43,18 @@
           </a>
         </div>
         <div class="cms-sector-wrap">
+          <a href="{{ url('/console/showcases/list') }}" class="cms-sector-link">
+            <p class="cms-sector-title">Showcases</p>
+            <img src="/images/contact.png" alt="cms-icon-contact" class="cms-sector-icon">
+          </a>
+        </div>
+        <div class="cms-sector-wrap">
+          <a href="{{ url('/console/works/list') }}" class="cms-sector-link">
+            <p class="cms-sector-title">Works</p>
+            <img src="/images/user.png" alt="cms-icon-user" class="cms-sector-icon">
+          </a>
+        </div>
+        <div class="cms-sector-wrap">
           <a href="{{ url('/console/contacts/list') }}" class="cms-sector-link">
             <p class="cms-sector-title">Contacts</p>
             <img src="/images/contact.png" alt="cms-icon-contact" class="cms-sector-icon">
@@ -50,7 +62,7 @@
         </div>
         <div class="cms-sector-wrap">
           <a href="{{ url('/console/users/list') }}" class="cms-sector-link">
-            <p class="cms-sector-title">Users/Showcases</p>
+            <p class="cms-sector-title">Users</p>
             <img src="/images/user.png" alt="cms-icon-user" class="cms-sector-icon">
           </a>
         </div>

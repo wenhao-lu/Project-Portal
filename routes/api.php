@@ -13,6 +13,7 @@ use App\Models\Contact;
 use App\Models\Tip;
 use App\Models\Task;
 use App\Models\Showcase;
+use App\Models\Work;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,39 @@ Route::get('/showcases/profile/{showcase?}', function(Showcase $showcase){
 
 });
 
+// Work
+Route::get('/works', function(){
+
+    $works = Work::orderBy('created_at')->get();
+
+    foreach($works as $key => $work)
+    {
+        $works[$key]['user'] = User::where('id', $work['user_id'])->first();
+        $works[$key]['type'] = Type::where('id', $work['type_id'])->first();
+
+        if($work['image'])
+        {
+            $works[$key]['image'] = env('APP_URL').'storage/'.$work['image'];
+        }
+    }
+
+    return $works;
+
+});
+
+Route::get('/works/profile/{work?}', function(Work $work){
+
+    $work['user'] = User::where('id', $work['user_id'])->first();
+    $work['type'] = Type::where('id', $work['type_id'])->first();
+
+    if($work['image'])
+    {
+        $work['image'] = env('APP_URL').'storage/'.$work['image'];
+    }
+
+    return $work;
+
+});
 
 Route::get('/educations', function(){
 

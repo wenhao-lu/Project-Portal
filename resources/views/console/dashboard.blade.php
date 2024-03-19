@@ -25,7 +25,7 @@
                 </ul>
                 <ul>
                     <li>Types</li>
-                    <li>Users</li>
+                    <li>Showcases</li>
                     <li>Scores</li>
                     <li>Contacts</li>
                 </ul>

@@ -14,6 +14,7 @@ use App\Http\Controllers\TipsController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\PortfolioCMSController;
 use App\Http\Controllers\ShowcasesController;
+use App\Http\Controllers\WorksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,15 @@ Route::post('/console/showcases/edit/{showcase:id}', [ShowcasesController::class
 Route::get('/console/showcases/delete/{showcase:id}', [ShowcasesController::class, 'delete'])->where('showcase', '[0-9]+')->middleware('auth');
 Route::get('/console/showcases/image/{showcase:id}', [ShowcasesController::class, 'imageForm'])->where('showcase', '[0-9]+')->middleware('auth');
 Route::post('/console/showcases/image/{showcase:id}', [ShowcasesController::class, 'image'])->where('showcase', '[0-9]+')->middleware('auth');
+
+Route::get('/console/works/list', [WorksController::class, 'list'])->middleware('auth');
+Route::get('/console/works/add', [WorksController::class, 'addForm'])->middleware('auth');
+Route::post('/console/works/add', [WorksController::class, 'add'])->middleware('auth');
+Route::get('/console/works/edit/{work:id}', [WorksController::class, 'editForm'])->where('work', '[0-9]+')->middleware('auth');
+Route::post('/console/works/edit/{work:id}', [WorksController::class, 'edit'])->where('work', '[0-9]+')->middleware('auth');
+Route::get('/console/works/delete/{work:id}', [WorksController::class, 'delete'])->where('work', '[0-9]+')->middleware('auth');
+Route::get('/console/works/image/{work:id}', [WorksController::class, 'imageForm'])->where('work', '[0-9]+')->middleware('auth');
+Route::post('/console/works/image/{work:id}', [WorksController::class, 'image'])->where('work', '[0-9]+')->middleware('auth');
 
 Route::get('/console/users/list', [UsersController::class, 'list'])->middleware('auth');
 Route::get('/console/users/add', [UsersController::class, 'addForm'])->middleware('auth');
