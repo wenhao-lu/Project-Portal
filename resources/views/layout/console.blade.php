@@ -63,52 +63,52 @@
                     To-Do List</a></li>
                 <!-- Section settings -->
                 <li><a href="/console/projects/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-diagram-project"></i>
                     Projects</a>
                 </li>
 
                 <li><a href="/console/showcases/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-laptop"></i>
                     Showcases</a>
                 </li>
 
                 <li><a href="/console/works/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-briefcase"></i>
                     Works</a>
                 </li>
 
                 <li><a href="/console/types/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-layer-group"></i>
                     Types</a>
                 </li>
 
                 <li><a href="/console/skills/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-compass-drafting"></i>
                     Skills</a>
                 </li>
 
                 <li><a href="/console/educations/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-user-graduate"></i>
                     Educations</a>
                 </li>
 
                 <li><a href="/console/users/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-user-group"></i>
                     Users</a>
                 </li>
 
                 <li><a href="/console/stacks/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-cubes"></i>
                     Stacks</a>
                 </li>
 
                 <li><a href="/console/contacts/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-envelope-open-text"></i>
                     Contacts</a>
                 </li>
 
                 <li><a href="/console/scores/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fa-solid fa-gamepad"></i>
                     Scores</a>
                 </li>
                 

@@ -10,7 +10,7 @@
         <div class="widget-tasks widget-card">
             <div class="card-img">
                 <a href="/console/portfolioCMS/index">
-                    <img src="/images/cms.webp" alt="card-img-2" class="card-img-2">
+                    <img src="/images/card-img-1.webp" alt="card-img-1" class="card-img-1">
                 </a>
             </div>
             <p class="card-sub-title">Portfolio CMS</p>
@@ -37,7 +37,7 @@
         <!-- Widget 2 -->
         <div class="widget-tips widget-card">
             <div class="card-img">
-                <img src="/images/card-img-1.png" alt="card-img-1" class="card-img-1">
+                <img src="/images/card-img-2.webp" alt="card-img-2" class="card-img-2">
             </div>
             <p class="card-sub-title">Everyday Tips</p>
 
@@ -58,7 +58,7 @@
         <div class="widget-tasks widget-card">
             <div class="card-img">
                 <a href="/console/tasks/list">
-                    <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
+                    <img src="/images/card-img-3.webp" alt="card-img-3" class="card-img-3">
                 </a>
             </div>
             <p class="card-sub-title">To-Do List</p>
@@ -89,7 +89,7 @@
         <div class="widget-tasks widget-card">
             <div class="card-img">
                 <a href="/console/tasks/list">
-                    <img src="/images/card-img-2.png" alt="card-img-2" class="card-img-2">
+                    <img src="/images/card-img-4.webp" alt="card-img-4" class="card-img-4">
                 </a>
             </div>
             <p class="card-sub-title">To-Do List</p>
