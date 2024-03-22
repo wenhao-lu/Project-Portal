@@ -13,6 +13,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    // Define constants for roles
+    const ROLE_ADMIN = 'admin';
+    const ROLE_STANDARD = 'standard';
+    const ROLE_LIMITED = 'limited';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +28,7 @@ class User extends Authenticatable
         'last',
         'email',
         'password',
+        'role', 
     ];
 
     /**
@@ -57,6 +63,22 @@ class User extends Authenticatable
     public function tips()
     {
         return $this->hasMany(Tip::class, 'user_id');
+    }
+
+    // Define methods to check user roles
+    public function isAdmin()
+    {
+        return $this->role === self::ROLE_ADMIN;
+    }
+
+    public function isStandard()
+    {
+        return $this->role === self::ROLE_STANDARD;
+    }
+
+    public function isLimited()
+    {
+        return $this->role === self::ROLE_LIMITED;
     }
 
 }

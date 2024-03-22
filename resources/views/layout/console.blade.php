@@ -46,22 +46,36 @@
             <ul class="side-nav-list">
             @if (Auth::check())
                 <li class="nav-list-name">
-                    <strong class="userName">{{auth()->user()->first}} {{auth()->user()->last}} </strong>
+                    <strong class="userName">
+                    {{auth()->user()->first}} {{auth()->user()->last}} </strong>
                 </li>
+                <li class="roleName">
+                    {{ auth()->user()->isAdmin() ? 'Admin Account' : ''}}
+                    {{ auth()->user()->isStandard() ? 'Standard Account' : '' }}
+                    {{ !auth()->user()->isAdmin() && !auth()->user()->isStandard() ? 'Guest Account' : '' }}
+                </li>    
                 @endif
                 <li><a href="/" class="nav3">
-                    <i class="fas fa-home"></i>    
+                    <i class="fas fa-home sideNavIcon"></i>    
                     Home Page</a></li>
                 <li><a href="/console/dashboard" class="nav2">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i class="fas fa-tachometer-alt sideNavIcon"></i>
                     Dashboard</a></li>
                 <li><a href="/console/tips/list">
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-lightbulb sideNavIcon"></i>
                     Daily Tips</a></li>
                 <li><a href="/console/tasks/list">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fas fa-tasks sideNavIcon"></i>
                     To-Do List</a></li>
+                <li><a href="/console/portfolioCMS/index">
+                    <i class="fa-solid fa-compass-drafting sideNavIcon"></i>
+                    Portfolio CMS</a></li>
+                <li><a href="/console/scores/list">
+                    <i class="fa-solid fa-gamepad sideNavIcon"></i>
+                    Game API</a>
+                </li>
                 <!-- Section settings -->
+                <!--
                 <li><a href="/console/projects/list">
                     <i class="fa-solid fa-diagram-project"></i>
                     Projects</a>
@@ -92,29 +106,26 @@
                     Educations</a>
                 </li>
 
-                <li><a href="/console/users/list">
-                    <i class="fa-solid fa-user-group"></i>
-                    Users</a>
-                </li>
-
                 <li><a href="/console/stacks/list">
                     <i class="fa-solid fa-cubes"></i>
                     Stacks</a>
                 </li>
 
-                <li><a href="/console/contacts/list">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    Contacts</a>
-                </li>
 
-                <li><a href="/console/scores/list">
-                    <i class="fa-solid fa-gamepad"></i>
-                    Scores</a>
+
+
+                -->
+
+                <!-- Only admin can access to the User section  -->
+                <li class="{{ auth()->check() && (auth()->user()->isLimited() || auth()->user()->isStandard()) ? 'disabled-link' : '' }}">
+                    <a href="/console/users/list">
+                        <i class="fa-solid fa-user-group sideNavIcon"></i>
+                        Users
+                    </a>
                 </li>
-                
 
                 <li><a href="/console/logout">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-sign-out-alt sideNavIcon"></i>
                     Log Out</a></li>
             </ul>
         </div>

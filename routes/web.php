@@ -43,7 +43,7 @@ Route::get('/project/{project:slug}', function (Project $project) {
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
 Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('console.login');
 Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest');
-Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
+Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth')->name('console.dashboard');
 
 Route::get('/console/portfolioCMS/index', [PortfolioCMSController::class, 'index'])->middleware('auth');
 
