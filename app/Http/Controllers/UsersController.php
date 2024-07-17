@@ -56,7 +56,7 @@ class UsersController extends Controller
         $user->last = $attributes['last'];
         $user->email = $attributes['email'];
         $user->password = $attributes['password'];
-        $user->last = $attributes['role'];
+        $user->role = $attributes['role'];
         $user->save();
 
         return redirect('/console/users/list')

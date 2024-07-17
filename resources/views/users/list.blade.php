@@ -18,7 +18,7 @@
             <tr>
                 <td>{{$user->first}} {{$user->last}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->created_at->format('M j, Y')}}</td>
+                <td>{{$user->role}}</td>
                 <td><a href="/console/users/edit/{{$user->id}}">Edit</a></td>
                 <td><a href="/console/users/delete/{{$user->id}}">Delete</a></td>
             </tr>
