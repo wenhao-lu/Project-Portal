@@ -19,7 +19,10 @@
                 @endif
 
             <div class="project-title">
-                {{$project->title}}
+                
+                <a href="{{$project->url}}" target="_blank">{{$project->title}} 
+                    
+                </a>
             </div>
 
             <div class="project-content">

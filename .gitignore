@@ -9,6 +9,8 @@
 .env WHC
 .env.example
 .env_c9674390_project
+.env_online
+.env_local
 cms.sql
 dev_process.md
 GitHub.md

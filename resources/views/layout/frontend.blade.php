@@ -21,7 +21,7 @@
 
 <header class="w3-padding">
 
-    <div class="text-greeting">Welcome to My Portfolio of Projects</div>
+    <div class="text-greeting">Welcome to My Projects</div>
 
 </header>
 
