@@ -73,6 +73,14 @@
             </a>
         </div>
 
+        <div class="contact-link">
+            <a href="{{asset('storage/resume.pdf')}}" target="_blank">
+                <img src="{{asset('storage/resume.png')}}" alt="resume-link" />
+            </a>
+        </div>
+
+        
+
     </div>    
 
 </section>
